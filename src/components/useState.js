@@ -23,7 +23,7 @@ function State() {
 
     return (
         <div>
-            <h1>UseState ex 1</h1><br/>
+            <h1>UseState ex 1</h1>
             <h2>{count}</h2>
             <button onClick={incrementState}>+</button>
             <button onClick={decrementState}>-</button>

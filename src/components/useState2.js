@@ -5,18 +5,27 @@ function State2() {
 
     // também é possível usar objetos como valor
     const [count, setCount] = useState({
-        theme: "dark",
-        numero: 1
+        theme: "light",
+        numero: 0
     });
 
     const incrementState = () => {
-        // Sintax
+        // certa
+        setCount((prevState) => {
+            return {
+                // usando com ...prevState, preserva o valor anterior mudando somente o que for declarado
+                ...prevState,
+                numero: prevState.numero + 1
+            }
+        });
+        // console.log(count)
+    }
+
+    const incrementStateErrado = () => {
+        // certa
         setCount((prevState) => {
             return {
                 // se for usado assim ira alterar todo o valor do objeto para numero + 1
-                // numero: prevState.numero + 1
-                // usando assim preserva o valor anterior mudando somente o que for declarado
-                ...prevState,
                 numero: prevState.numero + 1
             }
         });
@@ -25,10 +34,13 @@ function State2() {
 
     return (
         <div>
-            <br/><h1>UseState ex 2</h1><br/>
+            <h1>UseState ex 2</h1>
             <h2>{count.numero}</h2>
             <h2>{count.theme}</h2>
-            <button onClick={incrementState}>+</button>
+            <h4>Forma certa: </h4>
+            <button onClick={incrementState}>V</button>
+            <h4>Forma errada: </h4>
+            <button onClick={incrementStateErrado} className="errado">X</button>
         </div>
     )
 }
