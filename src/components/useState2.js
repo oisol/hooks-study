@@ -22,10 +22,11 @@ function State2() {
     }
 
     const incrementStateErrado = () => {
-        // certa
+        // errado
         setCount((prevState) => {
             return {
                 // se for usado assim ira alterar todo o valor do objeto para numero + 1
+                // pois não usa o ...prevState para pegar os valores anteriores
                 numero: prevState.numero + 1
             }
         });
