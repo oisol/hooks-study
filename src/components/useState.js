@@ -9,7 +9,7 @@ function State() {
     // função que altera o valor do state com base no seu
     // valor anterior
     const incrementState = () => {
-        // Sintax
+        // Syntax
         setCount((prevState) => (
             prevState + 1
         ));
