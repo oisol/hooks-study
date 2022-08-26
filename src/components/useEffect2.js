@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 function Effect2() {
     const [section, setSection] = useState("Home");
 
+    // passando o segundo parametro ira rodar sempre que algo escolhido (section) for alterado 
+    // podendo ser passado mais de 1 parametro
     useEffect(() => {
         console.log("Section alterada");
     }, [section])
